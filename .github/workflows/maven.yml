@@ -28,7 +28,7 @@ jobs:
       with:
         aws-access-key-id: 'AKIAZGPKK2ET6VWRZZ56'
         aws-secret-access-key: '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'
-        aws-region: 'Asia Pacific (Mumbai)'
+        aws-region: 'Mumbai'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - run: cd ~/actions-runner/deploy/transporterApi/transporterApi/TransporterAPI
