@@ -3,6 +3,7 @@ package com.springboot.TransporterAPI.Model;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
+import com.springboot.TransporterAPI.Entity.Verified;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +20,7 @@ public class PostTransporter {
 	private String transporterName;
 	private String companyName;
 	private String kyc;
+	//For verified_id
+	private Verified verified;
 
 }
