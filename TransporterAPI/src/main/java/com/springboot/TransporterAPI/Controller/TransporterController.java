@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.springboot.TransporterAPI.Entity.Verified;
+import com.springboot.TransporterAPI.Response.GetResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,9 +45,9 @@ public class TransporterController {
 		return new ResponseEntity<>(service.addTransporter(transporter),HttpStatus.CREATED);
 	}
 
-
+	//Changed <List<Transporter>> to <List<GetResponse>> for getting verified response properly
 	@GetMapping("/transporter")
-	public ResponseEntity<List<Transporter>> getTransporters(
+	public ResponseEntity<List<GetResponse>> getTransporters(
 			@RequestParam(required = false) Boolean transporterApproved,
 			@RequestParam(required = false) Boolean companyApproved,
 			@RequestParam(required = false) String phoneNo,
@@ -54,10 +56,15 @@ public class TransporterController {
 		return new ResponseEntity<>(service.getTransporters(transporterApproved, companyApproved, phoneNo, pageNo),HttpStatus.OK);
 	}
 
+	@GetMapping("/verified")
+	public ResponseEntity<List<Verified>> getVerification(){
+		return new ResponseEntity<>(service.getVerification(),HttpStatus.OK);
+	}
+
 	@GetMapping("/transporter/{transporterId}")
 	private ResponseEntity<Object> getOneTransporter(@PathVariable String transporterId) {
 		log.info("Get by transporterId Controller Started");
-		return new ResponseEntity<>( service.getOneTransporter(transporterId),HttpStatus.OK);
+		return new ResponseEntity<>( service.getOneVerified(transporterId),HttpStatus.OK);
 	}
 
 

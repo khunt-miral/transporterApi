@@ -2,10 +2,7 @@ package com.springboot.TransporterAPI.Entity;
 
 import java.sql.Timestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -43,4 +40,11 @@ public class Transporter {
 	
 	@CreationTimestamp
 	public Timestamp timestamp;
+
+	//Creating verified_id for joining transporter table with verification table.
+	//Cascade helps to post verified table while posting transporter.
+	//Cascade helps to delete the verified tables entity in case transporter is deleted, Also does the same for update.
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="verifiedId")
+	private Verified verified;
 }

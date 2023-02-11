@@ -2,6 +2,7 @@ package com.springboot.TransporterAPI.Response;
 
 import java.sql.Timestamp;
 
+import com.springboot.TransporterAPI.Entity.Verified;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
@@ -25,4 +26,6 @@ public class TransporterUpdateResponse {
 	private Boolean transporterApproved;
 	private Boolean accountVerificationInProgress;
 	public Timestamp timestamp;
+	//for verified table details.
+	private Verified verified;
 }
