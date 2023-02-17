@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 public class Verified {
     @Id
-    private String reference_id;
+    private String refrence_id;
     private String name;
     private String address;
     //@OneToOne(mappedBy = "verified")
