@@ -73,7 +73,7 @@ public class TransporterServiceImpl implements TransporterService {
 		transporter.setTransporterId(temp);
 		response.setTransporterId(temp);
 		//setting refrence_id same as transporter_id
-		verified.setReference_id(temp);
+		verified.setRefrence_id(temp);
 
 		temp=postTransporter.getPhoneNo();
 		transporter.setPhoneNo(temp);
