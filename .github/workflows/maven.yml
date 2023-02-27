@@ -32,6 +32,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - run: cd ~/actions-runner/deploy/transporterApi/transporterApi/TransporterAPI
+    - run: sudo cp /home/ubuntu/envProd.properties /home/ubuntu/actions-runner/deploy/loadsApi/loadsApi/TruckBooking/target/
     - run: sudo docker container stop transporter-container || true
     - run: sudo docker container stop transporterPostgres || true
     - run: sudo docker container rm transporter-container|| true
