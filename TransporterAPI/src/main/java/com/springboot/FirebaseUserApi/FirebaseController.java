@@ -14,10 +14,10 @@ public class FirebaseController {
     @Autowired
     public Service service;
 
-    @GetMapping("/phoneNo/{number}")
-    public String getUserByEmail(@PathVariable String number) throws InterruptedException, ExecutionException, FirebaseAuthException {
+    @GetMapping("/email/{email}")
+    public String getUserByEmail(@PathVariable String email) throws InterruptedException, ExecutionException, FirebaseAuthException {
        //returning uid as a response       
-       return service.getByEmail(number);
+       return service.getByEmail(email);
     }
 
 }
