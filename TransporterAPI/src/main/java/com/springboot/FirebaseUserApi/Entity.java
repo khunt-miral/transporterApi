@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class Entity {
     private String uid;
-    private String phoneNumber;
+    private String email;
 }
