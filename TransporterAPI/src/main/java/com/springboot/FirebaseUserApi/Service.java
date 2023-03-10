@@ -10,8 +10,8 @@ import com.google.firebase.auth.UserRecord;
 public class Service {
 
     //getting uid by phone number
-    public String getByPhoneno(String phoneNumber) throws  FirebaseAuthException {
-        UserRecord userRecord = FirebaseAuth.getInstance().getUserByPhoneNumber(phoneNumber);
+    public String getByPhoneno(String email) throws  FirebaseAuthException {
+        UserRecord userRecord = FirebaseAuth.getInstance().getUserByEmail(email);
            return userRecord.getUid();
     }
 }
