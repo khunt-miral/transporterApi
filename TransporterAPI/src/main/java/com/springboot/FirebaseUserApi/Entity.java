@@ -8,4 +8,5 @@ import lombok.Setter;
 public class Entity {
     private String uid;
     private String email;
+    private String phoneno;
 }
